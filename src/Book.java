@@ -29,9 +29,8 @@ public class Book {
     }
 
     public String toString() {
-        // Добавляем метод toString()
         return "Название  " + this.title + this.author + " год выпуска " + this.publicationYear;
-        // Возвращаем строку в метод Main
+
     }
 
     public boolean equals(Book book1) {
