@@ -22,8 +22,15 @@ public class Author {
 
     }
 
-    public boolean equals(Author author1) {
-        return name.equals(author1.getName());
+    public boolean equals(Object  author1) {
+        if(author1 != null){
+            return false;
+        }
+         if(this.getClass() != author1.getClass()){
+             return false;
+         }
+         Author author = (Author) author1;
+        return name.equals(author.getName());
     }
 
     public int hashCode() {

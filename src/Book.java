@@ -34,11 +34,19 @@ public class Book {
     }
 
     public boolean equals(Book book1) {
-        return title.equals(book1.getTitle()) && author.equals(book1.getAuthor());
+        if (book1 != null) {
+            return false;
+        }
+        if (this.getClass() != book1.getClass()) {
+            return false;
+        }
+        Book book = (Book) book1;
+
+        return title.equals(book.getTitle()) && book.equals(book1.getAuthor());
     }
 
     public int hashCode() {
-        return Objects.hash(title, author , publicationYear);
+        return Objects.hash(title, author, publicationYear);
     }
 }
 
