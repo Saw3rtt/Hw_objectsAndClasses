@@ -23,14 +23,14 @@ public class Author {
     }
 
     public boolean equals(Object  author1) {
-        if(author1 != null){
+        if(author1 == null){
             return false;
         }
-         if(this.getClass() != author1.getClass()){
+         if(this.getClass() != author1.getClass()) {
              return false;
          }
          Author author = (Author) author1;
-        return name.equals(author.getName());
+        return name.equals(author.getName())  && lastName.equals(author.getLastName());
     }
 
     public int hashCode() {

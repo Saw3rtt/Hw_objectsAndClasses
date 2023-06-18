@@ -33,7 +33,7 @@ public class Book {
 
     }
 
-    public boolean equals(Book book1) {
+    public boolean equals(Object book1) {
         if (book1 != null) {
             return false;
         }
@@ -42,7 +42,7 @@ public class Book {
         }
         Book book = (Book) book1;
 
-        return title.equals(book.getTitle()) && book.equals(book1.getAuthor());
+        return title.equals(book.getTitle()) && book.equals(((Book) book1).getAuthor()) && publicationYear == book.getPublicationYear();
     }
 
     public int hashCode() {
