@@ -34,7 +34,7 @@ public class Book {
     }
 
     public boolean equals(Object book1) {
-        if (book1 != null) {
+        if (book1 == null) {
             return false;
         }
         if (this.getClass() != book1.getClass()) {
@@ -42,7 +42,7 @@ public class Book {
         }
         Book book = (Book) book1;
 
-        return title.equals(book.getTitle()) && book.equals(((Book) book1).getAuthor()) && publicationYear == book.getPublicationYear();
+        return title.equals(book.getTitle()) && author.equals(book.getAuthor()) && publicationYear == book.getPublicationYear();
     }
 
     public int hashCode() {
